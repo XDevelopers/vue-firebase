@@ -1,13 +1,63 @@
 <html>
-  <head>
+
+<head>
     <title>Vue.js Basics</title>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
-  </head>
-  <body>
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        .one {
+            color: green;
+        }
+        
+        .two {
+            text-decoration: line-through;
+        }
+        
+        .canvas {
+            width: 300px;
+            height: 300px;
+            margin-top: 20px;
+            background: #DDD;
+        }
+    </style>
+</head>
+
+<body>
 
     <h1>Vue Basics</h1>
-    <div id="app"> </div>
+    <div id="app">
+        <h2>{{ title }}</h2>
+        <p>{{ greet('morning') }}</p>
+        <a v-bind:href="url">Youtube</a>
+        <div v-bind:class="classes">Classes from Instance</div>
+        <input type="text" :value="name">
+        <br /><br />
+        <div style="display:none;">
+            <!--// Events -->
+            <p>I earn {{ wage }} pounds per hour</p>
+            <button v-on:click="changeWage(1)">Increase wage by $1</button>
+            <button v-on:click="wage--">Decrease wage by $1</button>
+            <br /><br />
+            <button v-on:dblclick="changeWage(5)">Increase wage by $5 by double click</button>
+            <br />
+            <button v-on:dblclick="changeWage(-5)">Increase wage by $5 by double click</button>
+            <br /><br />
+            <br /><br />
+            <button @click="logEvent">Log Event Info</button>
+            <div class="canvas" @mousemove="logCoords">{{ coords.x }}, {{ coords.y }}</div>
+            <br /><br />
+        </div>
+
+        <div>
+            <!--// Events -->
+            <input type="text" v-model="name">
+
+        </div>
+
+
+    </div>
 
     <script src="app.js"></script>
-  </body>
+</body>
+
 </html>
