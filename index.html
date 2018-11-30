@@ -48,12 +48,25 @@
             <br /><br />
         </div>
 
-        <div>
-            <!--// Events -->
+        <div style="display: none;">
+            <!--// Binding -->
             <input type="text" v-model="name">
 
         </div>
 
+        <div>
+            <!--// Looping -->
+            <ul>
+                <li v-for="item in items">{{ item }}</li>
+            </ul>
+            <br />
+            <div v-for="(ninja, index) in ninjas">
+                <p>{{ index }} - {{ ninja.name }}</p>
+                <p>Age: {{ ninja.age }}</p>
+                <p>Belt colour: {{ ninja.belt }}</p>
+            </div>
+
+        </div>
 
     </div>
 

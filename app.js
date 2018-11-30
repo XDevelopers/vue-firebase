@@ -9,7 +9,17 @@ new Vue({
         coords: {
             x: 0,
             y: 0
-        }
+        },
+        items: [
+            'Mushroom', 'Green Shells', 'Red Shells', 'Banana', 'Star'
+        ],
+        ninjas: [
+            { name: 'Crystal', age: 25, belt: 'Black' },
+            { name: 'Ted', age: 50, belt: 'Red' },
+            { name: 'Doug', age: 32, belt: 'Green' },
+            { name: 'Roger', age: 40, belt: 'Blue' },
+            { name: 'Ted', age: 30, belt: 'Orange' }
+        ]
     },
     methods: {
         greet(time) {
